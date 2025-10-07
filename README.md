@@ -9,6 +9,10 @@ Cumple el manifiesto y los criterios del reto:
 •	Persistencia: ETS (listas hash en memoria, sin BD)
 •	Errores canónicos: mapeados a HTTP y viajan como un solo tipo
 
+Descargar colletion postman:
+
+https://www.mediafire.com/file/lmnhkjqt6bdasmh/Reto.Elixir_.postman_collection.json/file
+
 ________________________________________
 Requisitos
 •	Elixir ≥ 1.15

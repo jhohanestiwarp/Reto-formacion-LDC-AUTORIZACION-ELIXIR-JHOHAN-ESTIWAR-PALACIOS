@@ -1,10 +1,14 @@
 Reto Auth – Elixir (in-memory)
+
 API de autenticación mínima basada en Plug + Cowboy con persistencia en memoria (ETS).
+
 Cumple el manifiesto y los criterios del reto:
+
 •	Endpoints: POST /signup, POST /signin
 •	Trazabilidad obligatoria: headers message-id (UUID) y x-request-id (UUID; fallback al message-id)
 •	Persistencia: ETS (listas hash en memoria, sin BD)
 •	Errores canónicos: mapeados a HTTP y viajan como un solo tipo
+
 ________________________________________
 Requisitos
 •	Elixir ≥ 1.15
@@ -29,22 +33,30 @@ x-request-id: <uuid> (si no viene, el server usa el message-id)
 •	  "password": "S3guro!2025",
 •	  "name": "Ada"
 •	}
+
 Errores
+
 •	409 EMAIL_ALREADY_EXISTS
 •	400 MALFORMED_REQUEST, 400 INVALID_EMAIL_FORMAT, 400 WEAK_PASSWORD
+
 ________________________________________
+
 POST /signin → 200
+
 Autentica y genera sesión.
 •	Headers obligatorios
 message-id: <uuid>
 x-request-id: <uuid> (fallback)
+
 •	Body (JSON)
+
 •	{
 •	  "email": "user@example.com",
 •	  "password": "S3guro!2025"
 •	}
 •	Respuesta 200 (JSON)
 •	{ "session_id": "<uuid>" }
+
 Errores
 •	404 USER_NOT_FOUND
 •	401 INVALID_CREDENTIALS
